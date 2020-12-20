@@ -11,7 +11,6 @@ export default class QuizDetailService extends Service {
         super();
         this.questions = EmberObject.create({
             1: {
-                title:"Question 1",
                 detail: "What was the first post of 2020?",
                 answers: {
                     1: "A Gaviscon bottle photo by Phil",
@@ -22,7 +21,6 @@ export default class QuizDetailService extends Service {
                 correct: 2
             },
             2: {
-                title:"Question 2",
                 detail:"Who was the first person to mention Trump in 2020?",
                 answers: {
                     1: "Phil with a meme",
@@ -33,7 +31,6 @@ export default class QuizDetailService extends Service {
                 correct: 4
             },
             3: {
-                title:"Question 3",
                 detail:"Who caused controversy in Feb with the revealtion that they used to put milky tea in their cornflakes as a child?",
                 answers: {
                     1: "Mark (Daly Murphy)",
@@ -44,7 +41,6 @@ export default class QuizDetailService extends Service {
                 correct: 4
             },
             4: {
-                title:"Question 4",
                 detail:"The first two posts in Feb were emojis. Who posted 👀 followed by 👋?",
                 answers: {
                     1: "Marie",
@@ -61,6 +57,11 @@ export default class QuizDetailService extends Service {
     @action
     choice(number, guess) {
       this.set(`questions.${number}.guess`, guess*1);
+    }
+
+    @action
+    start() {
+      this.set(`questions.hasStarted`, true);
     }
 
     get results() {
