@@ -1,0 +1,25 @@
+<h2>{{@question.title}}</h2>
+<p>{{@question.detail}}</p>
+
+{{#each-in @question.answers as |answerNumber answer|}}
+    <button 
+        {{on "click" (fn this.quizDetail.choice @number answerNumber)}} 
+        class="answerBtn 
+            {{if (is-correct @question.guess @question.correct answerNumber) "correct"}} 
+            {{if (is-choice @question.guess answerNumber) "choice"}}">{{answer}}</button>
+{{/each-in}}
+
+{{#if @question.guess}}
+    {{#if (is-correct @question.guess @question.correct) }}
+        <div class="result correct">✔️ Correct!</div>
+    {{else}}
+        <div class="result wrong">❌ Wrong!</div>
+    {{/if}}
+    <footer>
+        {{#if @question.isLast}}
+            <LinkTo @route="results"><button class="nextBtn">Finish</button></LinkTo>
+        {{else}}
+            <LinkTo @route="quiz.question" @model={{inc @number}}><button class="nextBtn">Next</button></LinkTo>
+        {{/if}}
+    </footer>
+{{/if}}

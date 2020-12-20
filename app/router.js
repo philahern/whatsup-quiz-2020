@@ -7,4 +7,8 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+  this.route('quiz', function () {
+    this.route('question', { path: '/:question/'});
+  });
+  this.route('results');
 });

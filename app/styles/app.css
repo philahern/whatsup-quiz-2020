@@ -1,0 +1,95 @@
+* { margin:0; padding:0; box-sizing:border-box; text-decoration: none;}
+
+body, html {
+    background-image: url("../bground.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color:#009688;
+    color:#fff;
+    display: flex;
+    height:60px;
+    justify-content: center;
+    align-items: center;
+    font-size:1.5em;
+}
+
+footer {
+    color:#fff;
+    display: flex;
+    height:60px;
+    justify-content: center;
+    align-items: center;
+    font-size:1.5em;
+}
+
+.content {
+    margin:auto;
+    max-width:400px;
+    padding:10px;
+}
+
+.answerBtn {
+    width:100%;
+    background-color: #eee;
+    display:flex;
+    align-items: center;
+    font-size:1em;
+    letter-spacing: .25px;
+    height: 45px;
+    padding-left: 15px;
+    margin: 10px 0 10px 0;
+    border: 1px solid darkgray;
+    outline:none;
+}
+
+.correct {
+    background-color: rgba(140,212,87,1);
+    color:#fff;
+    font-weight: 600;
+}
+.wrong {
+    background-color: lightpink;
+}
+.choice {
+    border-left: 6px solid rgba(18,118,180,1);
+    padding-left: 9px;
+}
+
+.result {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px;
+    font-size:1.5em;
+}
+
+.result.correct {
+    color:darkgreen;
+    background-color: transparent;
+}
+
+.result.wrong {
+    color:darkred;
+    background-color: transparent;
+}
+
+.nextBtn {
+    height:40px;
+    width:200px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:0;
+    border-radius: 3px;
+    background-color: rgba(18,118,180,1);
+    color: #fff;
+    font-weight:600;
+    font-size:1em;
+    text-decoration: none;
+}
