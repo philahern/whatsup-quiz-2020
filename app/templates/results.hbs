@@ -1,1 +1,24 @@
-<h1>You got {{this.model.results}} correct from {{this.model.questionsLength}}</h1>
+<section class="results-page">
+    <h1>Your score: {{this.model.results}} / {{this.model.questionsLength}}</h1>
+
+    <h3>
+        Wolfpack Level:
+        {{#if (gt this.model.results 24)}} Alpha Wolf {{/if}}
+        {{#if (and (gt this.model.results 11) (lt this.model.results 25)) }} Pack Wolf {{/if}}
+        {{#if (and (gt this.model.results 5) (lt this.model.results 12)) }} Puppy {{/if}}
+        {{#if (lt this.model.results 6)}} Moon Moon {{/if}}
+    </h3>
+
+    {{#if (gt this.model.results 24)}} <img src="alpha-wolf.jpg" width="80%" /> {{/if}}
+    {{#if (and (gt this.model.results 11) (lt this.model.results 25))}} <img src="wolf-pack.jpg" width="80%" /> {{/if}}
+    {{#if (and (gt this.model.results 5) (lt this.model.results 12))}} <img src="wolf-puppy.jpg" width="80%" /> {{/if}}
+    {{#if (lt this.model.results 6)}} <img src="MOONMOON.jpg" width="80%" /> {{/if}}
+
+    <ul>
+        <li><span class="list-heading">25+:</span>Alpha</li>
+        <li><span class="list-heading">12-25:</span>Pack Wolf</li>
+        <li><span class="list-heading">6-11:</span>Puppy</li>
+        <li><span class="list-heading">0-5:</span>Moon Moon</li>
+    </ul>
+</section>
+

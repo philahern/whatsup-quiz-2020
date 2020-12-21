@@ -1,5 +1,5 @@
 <h2>Question {{@number}} of {{this.quizDetail.questionsLength}}</h2>
-<p>{{@question.detail}}</p>
+<p class="detail">{{@question.detail}}</p>
 
 {{#each-in @question.answers as |answerNumber answer|}}
     <button 
@@ -16,7 +16,7 @@
         <div class="result wrong">❌ Wrong!</div>
     {{/if}}
     <footer>
-        {{#if @question.isLast}}
+        {{#if (is-choice this.quizDetail.questionsLength @number) }}
             <LinkTo @route="results"><button class="nextBtn">Finish</button></LinkTo>
         {{else}}
             <LinkTo @route="quiz.question" @model={{inc @number}}><button class="nextBtn">Next</button></LinkTo>

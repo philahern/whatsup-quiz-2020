@@ -1,4 +1,4 @@
-* { margin:0; padding:0; box-sizing:border-box; text-decoration: none;}
+* { margin:0; padding:0; box-sizing:border-box; text-decoration: none; list-style-type: none;}
 
 body, html {
     background-image: url("../bground.png");
@@ -34,9 +34,25 @@ footer {
     padding:10px;
 }
 
+.index-page {
+    text-align: center;
+    font-weight: bold;
+}
+.index-page h1 {
+    font-size: 10em;
+}
+
+.detail {
+    margin:10px 0 20px 0;
+    font-weight: bold;
+}
+
 .answerBtn {
     width:100%;
-    background-color: #eee;
+    background-color: #fff;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #fff 50%, rgba(140,212,87,1) 50%);
+    transition: background-position 0.3s ease-out;
     display:flex;
     align-items: center;
     font-size:1em;
@@ -50,6 +66,7 @@ footer {
 
 .correct {
     background-color: rgba(140,212,87,1);
+    background-position: -100% 0;
     color:#fff;
     font-weight: 600;
 }
@@ -67,6 +84,9 @@ footer {
     justify-content: center;
     margin:20px;
     font-size:1.5em;
+    animation-duration: 2s;
+    animation-name: bounce-6;
+    animation-timing-function: ease;
 }
 
 .result.correct {
@@ -79,6 +99,11 @@ footer {
     background-color: transparent;
 }
 
+.list-heading {
+    width:60px;
+    font-weight: bold;
+    display: inline-block;
+}
 .nextBtn {
     height:40px;
     width:200px;
@@ -87,9 +112,27 @@ footer {
     justify-content: center;
     border:0;
     border-radius: 3px;
-    background-color: rgba(18,118,180,1);
+    background-color: #009688;
     color: #fff;
     font-weight:600;
     font-size:1em;
     text-decoration: none;
+}
+
+.results-page {
+    text-align: center;
+}
+
+.results-page h1, .results-page h3 {
+    margin:20px;
+}
+
+@keyframes bounce-6 {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-50px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
 }
